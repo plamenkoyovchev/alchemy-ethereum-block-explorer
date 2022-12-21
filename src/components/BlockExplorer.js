@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { alchemy } from "../App";
-
 import TransactionsGrid from "./TransactionsGrid";
+import useDebounce from "../hooks/useDebounce";
 
 const BlockExplorer = () => {
 	const [blockNumber, setBlockNumber] = useState(1);
+	const blockNumberDebounce = useDebounce(blockNumber);
 	const [blockInfo, setBlockInfo] = useState();
 
 	useEffect(() => {
@@ -17,13 +18,13 @@ const BlockExplorer = () => {
 
 	useEffect(() => {
 		async function getBlockInfo() {
-			setBlockInfo(await alchemy.core.getBlock(blockNumber));
+			setBlockInfo(await alchemy.core.getBlock(blockNumberDebounce));
 		}
 
-		if (blockNumber && blockNumber !== 1) {
+		if (blockNumberDebounce && blockNumberDebounce !== 1) {
 			getBlockInfo();
 		}
-	}, [blockNumber]);
+	}, [blockNumberDebounce]);
 
 	return (
 		<>
