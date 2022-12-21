@@ -38,7 +38,7 @@ const BlockExplorer = () => {
 					InputLabelProps={{
 						shrink: true,
 					}}
-					sx={{width: "570px"}}
+					sx={{width: "650px"}}
 				/>
 			</Grid>
 			{blockInfo && (
