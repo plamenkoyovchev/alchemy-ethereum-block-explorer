@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { alchemy } from "../App";
-import TransactionsGrid from "./TransactionsGrid";
-import useDebounce from "../hooks/useDebounce";
+import { alchemy } from "../../App";
+import TransactionsGrid from "../TransactionsGrid/TransactionsGrid";
+import useDebounce from "../../hooks/useDebounce";
 
 const BlockExplorer = () => {
 	const [blockNumber, setBlockNumber] = useState(1);

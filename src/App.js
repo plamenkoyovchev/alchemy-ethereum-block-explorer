@@ -1,6 +1,6 @@
 import { Alchemy, Network } from "alchemy-sdk";
 import "./App.css";
-import BlockExplorer from "./components/BlockExplorer";
+import BlockExplorer from "./components/BlockExplorer/BlockExplorer";
 
 // Refer to the README doc for more information about using API
 // keys in client-side code. You should never do this in production
