@@ -6,7 +6,7 @@ const columns = [
 		field: "id",
 		headerName: "Tx",
 		sortable: false,
-		width: 700,
+		width: 560,
 	},
 ];
 

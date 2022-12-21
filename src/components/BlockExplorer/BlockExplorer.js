@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { alchemy } from "../../App";
 import TransactionsGrid from "../TransactionsGrid/TransactionsGrid";
 import useDebounce from "../../hooks/useDebounce";
+import { Grid, TextField } from "@mui/material";
 
 const BlockExplorer = () => {
 	const [blockNumber, setBlockNumber] = useState(1);
@@ -27,23 +28,28 @@ const BlockExplorer = () => {
 	}, [blockNumberDebounce]);
 
 	return (
-		<>
-			<h3>
-				<span>Block Number: </span>
-				<input
-					type="text"
+		<Grid container spacing={2}>
+			<Grid item xs={12}>
+				<TextField
+					label="Block number"
+					type="number"
 					value={blockNumber}
 					onChange={(e) => setBlockNumber(+e.target.value)}
+					InputLabelProps={{
+						shrink: true,
+					}}
 				/>
-			</h3>
+			</Grid>
 			{blockInfo && (
-				<TransactionsGrid
-					rows={blockInfo.transactions.map((tx) => ({
-						id: tx,
-					}))}
-				/>
+				<Grid item xs={12}>
+					<TransactionsGrid
+						rows={blockInfo.transactions.map((tx) => ({
+							id: tx,
+						}))}
+					/>
+				</Grid>
 			)}
-		</>
+		</Grid>
 	);
 };
 
