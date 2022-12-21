@@ -29,7 +29,7 @@ const BlockExplorer = () => {
 
 	return (
 		<Grid container spacing={2}>
-			<Grid item xs={12}>
+			<Grid item xs={12} marginTop={2}>
 				<TextField
 					label="Block number"
 					type="number"
@@ -38,6 +38,7 @@ const BlockExplorer = () => {
 					InputLabelProps={{
 						shrink: true,
 					}}
+					sx={{width: "570px"}}
 				/>
 			</Grid>
 			{blockInfo && (
