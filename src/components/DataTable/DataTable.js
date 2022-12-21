@@ -11,6 +11,7 @@ const DataTable = ({ columns, rows }) => {
 				columns={columns}
 				pageSize={10}
 				rowsPerPageOptions={[10]}
+				autoHeight
 			/>
 		</div>
 	);
