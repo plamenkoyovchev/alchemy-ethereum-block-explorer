@@ -1,0 +1,17 @@
+.Navigation {
+    padding: 10px;
+    background-color: black;
+    text-align: left;
+}
+
+.NavItem {
+    margin-left: 10px;
+    margin-right: 10px;
+    color:white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.NavItem:hover {
+    text-decoration: underline;
+}

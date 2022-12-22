@@ -1,8 +1,10 @@
 import { Alchemy, Network } from "alchemy-sdk";
-import { Routes, Route } from "react-router";
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import BlockExplorer from "./components/BlockExplorer/BlockExplorer";
-import NotFound from "./pages/NotFound/NotFound";
+import Navigation from "./components/Navigation/Navigation";
+import AccountsPage from "./pages/AccountsPage/AccountsPage";
+import BlockExplorerPage from "./pages/BlockExplorerPage/BlockExplorerPage";
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 
 // Refer to the README doc for more information about using API
 // keys in client-side code. You should never do this in production
@@ -22,11 +24,12 @@ export const alchemy = new Alchemy(settings);
 function App() {
 	return (
 		<div className="App">
-			<h1>Block Explorer</h1>
-			<hr />
+			<Navigation />
 			<Routes>
-				<Route path="/" element={<BlockExplorer />} />
-				<Route path="*" element={<NotFound />} />
+				<Route path="/accounts" element={<AccountsPage />} />
+				<Route path="/block-explorer" element={<BlockExplorerPage />} />
+				<Route path="/" element={<BlockExplorerPage />} />
+				<Route path="*" element={<NotFoundPage />} />
 			</Routes>
 		</div>
 	);

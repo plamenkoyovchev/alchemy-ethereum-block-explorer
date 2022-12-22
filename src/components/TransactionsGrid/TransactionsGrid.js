@@ -8,7 +8,7 @@ const columns = [
 		headerName: "Tx",
 		sortable: false,
 		width: 630,
-		renderCell: ({ id }) => (<Typography>{id}</Typography>)
+		renderCell: ({ id }) => <Typography>{id}</Typography>,
 	},
 ];
 

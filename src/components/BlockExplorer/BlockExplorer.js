@@ -28,29 +28,33 @@ const BlockExplorer = () => {
 	}, [blockNumberDebounce]);
 
 	return (
-		<Grid container spacing={2}>
-			<Grid item xs={12} marginTop={2}>
-				<TextField
-					label="Block number"
-					type="number"
-					value={blockNumber}
-					onChange={(e) => setBlockNumber(+e.target.value)}
-					InputLabelProps={{
-						shrink: true,
-					}}
-					sx={{width: "650px"}}
-				/>
-			</Grid>
-			{blockInfo && (
-				<Grid item xs={12}>
-					<TransactionsGrid
-						rows={blockInfo.transactions.map((tx) => ({
-							id: tx,
-						}))}
+		<>
+			<h1>Block Explorer</h1>
+			<hr />
+			<Grid container spacing={2}>
+				<Grid item xs={12} marginTop={2}>
+					<TextField
+						label="Block number"
+						type="number"
+						value={blockNumber}
+						onChange={(e) => setBlockNumber(+e.target.value)}
+						InputLabelProps={{
+							shrink: true,
+						}}
+						sx={{ width: "650px" }}
 					/>
 				</Grid>
-			)}
-		</Grid>
+				{blockInfo && (
+					<Grid item xs={12}>
+						<TransactionsGrid
+							rows={blockInfo.transactions.map((tx) => ({
+								id: tx,
+							}))}
+						/>
+					</Grid>
+				)}
+			</Grid>
+		</>
 	);
 };
 
