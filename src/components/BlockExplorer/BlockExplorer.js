@@ -3,6 +3,7 @@ import { alchemy } from "../../App";
 import TransactionsGrid from "../TransactionsGrid/TransactionsGrid";
 import useDebounce from "../../hooks/useDebounce";
 import { Grid, TextField } from "@mui/material";
+import Loading from "../Loading/Loading";
 
 const BlockExplorer = () => {
 	const [blockNumber, setBlockNumber] = useState(1);
@@ -50,6 +51,11 @@ const BlockExplorer = () => {
 						sx={{ width: "650px" }}
 					/>
 				</Grid>
+				{!blockInfo && (
+					<Grid item xs={12}>
+						<Loading />
+					</Grid>
+				)}
 				{blockInfo && (
 					<Grid item xs={12}>
 						<TransactionsGrid
