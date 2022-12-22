@@ -1,5 +1,6 @@
-import { Typography } from "@mui/material";
+
 import React from "react";
+import { NavLink } from "react-router-dom";
 import DataTable from "../DataTable/DataTable";
 
 const columns = [
@@ -8,7 +9,14 @@ const columns = [
 		headerName: "Tx",
 		sortable: false,
 		width: 630,
-		renderCell: ({ id }) => <Typography>{id}</Typography>,
+		renderCell: ({ row: { id, value, asset } }) => (
+			<NavLink
+				state={{ value, asset }}
+				to={{ pathname: `/transaction/${id}` }}
+			>
+				{id}
+			</NavLink>
+		),
 	},
 ];
 

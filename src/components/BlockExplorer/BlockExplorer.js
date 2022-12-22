@@ -19,7 +19,13 @@ const BlockExplorer = () => {
 
 	useEffect(() => {
 		async function getBlockInfo() {
-			setBlockInfo(await alchemy.core.getBlock(blockNumberDebounce));
+			setBlockInfo(
+				await alchemy.core.getAssetTransfers({
+					fromBlock: blockNumberDebounce,
+					toBlock: blockNumberDebounce,
+					category: ["external"],
+				})
+			);
 		}
 
 		if (blockNumberDebounce && blockNumberDebounce !== 1) {
@@ -47,8 +53,10 @@ const BlockExplorer = () => {
 				{blockInfo && (
 					<Grid item xs={12}>
 						<TransactionsGrid
-							rows={blockInfo.transactions.map((tx) => ({
-								id: tx,
+							rows={blockInfo.transfers.map(({ hash, value, asset }) => ({
+								id: hash,
+								value,
+								asset,
 							}))}
 						/>
 					</Grid>
