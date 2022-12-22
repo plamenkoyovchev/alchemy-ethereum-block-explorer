@@ -2,6 +2,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import DataTable from "../DataTable/DataTable";
+import styles from "./TransactionsGrid.module.css";
 
 const columns = [
 	{
@@ -13,6 +14,7 @@ const columns = [
 			<NavLink
 				state={{ value, asset }}
 				to={{ pathname: `/transaction/${id}` }}
+				className={styles.NavLink}
 			>
 				{id}
 			</NavLink>
