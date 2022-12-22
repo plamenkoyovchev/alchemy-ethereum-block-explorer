@@ -5,6 +5,7 @@ import Navigation from "./components/Navigation/Navigation";
 import AccountsPage from "./pages/AccountsPage/AccountsPage";
 import BlockExplorerPage from "./pages/BlockExplorerPage/BlockExplorerPage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
+import TransactionDetailsPage from "./pages/TransactionDetailsPage/TransactionDetailsPage";
 
 // Refer to the README doc for more information about using API
 // keys in client-side code. You should never do this in production
@@ -28,6 +29,7 @@ function App() {
 			<Routes>
 				<Route path="/accounts" element={<AccountsPage />} />
 				<Route path="/block-explorer" element={<BlockExplorerPage />} />
+				<Route path="/transaction/:id" element={<TransactionDetailsPage />} />
 				<Route path="/" element={<BlockExplorerPage />} />
 				<Route path="*" element={<NotFoundPage />} />
 			</Routes>
