@@ -1,6 +1,8 @@
 import { Alchemy, Network } from "alchemy-sdk";
+import { Routes, Route } from "react-router";
 import "./App.css";
 import BlockExplorer from "./components/BlockExplorer/BlockExplorer";
+import NotFound from "./pages/NotFound/NotFound";
 
 // Refer to the README doc for more information about using API
 // keys in client-side code. You should never do this in production
@@ -22,7 +24,10 @@ function App() {
 		<div className="App">
 			<h1>Block Explorer</h1>
 			<hr />
-			<BlockExplorer />
+			<Routes>
+				<Route path="/" element={<BlockExplorer />} />
+				<Route path="*" element={<NotFound />} />
+			</Routes>
 		</div>
 	);
 }
