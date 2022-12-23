@@ -1,5 +1,7 @@
 # Ethereum Block Explorer
 
+## Demo: [Block Explorer](https://alchemy-ethereum-block-explorer.vercel.app/block-explorer)
+
 The lessons this week covered the Ethereum JSON-RPC API and the `ethers.js` library giving us the ability to query the Ethereum blockchain and make transactions!
 
 Let's put that knowledge to the test by building our very own **Ethereum Block Explorer**!
